@@ -1,0 +1,26 @@
+---
+- name: Deploy AS3 to BIG-IP
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  vars:
+
+  vars_files:
+
+  tasks:
+
+  - name: Push my AS3 to my BIGIP
+    uri:
+      url: https://18.130.4.8/mgmt/shared/appsvcs/declare
+      user: admin
+      password: awsuser123!!
+      method: POST
+      body: "{{ lookup('file','./myapp.json') }}"
+      force_basic_auth: yes
+      status_code: 200
+      body_format: json
+      validate_certs: no
+
+
+...
