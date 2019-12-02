@@ -6,6 +6,7 @@
 
   vars:
     uri_method: POST
+    test: 123
 
   vars_files:
     creds/big_creds.yaml
